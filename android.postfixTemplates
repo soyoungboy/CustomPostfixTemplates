@@ -1,14 +1,14 @@
 ## android 使用的数据 #
 
 .isNull : 数据为 null
+    java.lang.CharSequence → android.text.TextUtils.isEmpty($expr$)
     android.view.View → null == $expr$
     java.lang.Object → null == $expr$
-    java.lang.CharSequence → android.text.TextUtils.isEmpty($expr$)
 
 .isNotNull : 数据不为 null
+    java.lang.CharSequence → !android.text.TextUtils.isEmpty($expr$)
     android.view.View → null != $expr$
     java.lang.Object → null != $expr$
-    java.lang.CharSequence → !android.text.TextUtils.isEmpty($expr$)
 
 .visible : view 显示
     android.view.View → $expr$.setVisible(View.VISIBLE);
