@@ -1,0 +1,33 @@
+## android 使用的数据 #
+
+.isNull : 数据为 null
+    java.lang.CharSequence → android.text.TextUtils.isEmpty($expr$)
+    android.view.View → null == $expr$
+    java.lang.Object → null == $expr$
+
+.isNotNull : 数据不为 null
+    java.lang.CharSequence → !android.text.TextUtils.isEmpty($expr$)
+    android.view.View → null != $expr$
+    java.lang.Object → null != $expr$
+
+.visible : view 显示
+    android.view.View → $expr$.setVisible(View.VISIBLE);
+
+.gone : view 隐藏
+    android.view.View → $expr$.setVisible(View.GONE);
+
+.toString : 转String
+    INT → java.lang.String.valueOf($expr$)
+    FLOAT → java.lang.String.valueOf($expr$)
+    LONG → java.lang.String.valueOf($expr$)
+    DOUBLE → java.lang.String.valueOf($expr$)
+    SHORT → java.lang.String.valueOf($expr$)
+
+.log : 打印日志
+    java.lang.String        →   android.util.Log.d("egan", "$className*:className()$:$methodName*:methodName()$:$line*:lineNumber()$ >>> " + $expr$);
+    INT                     →   android.util.Log.d("egan", "$className*:className()$:$methodName*:methodName()$:$line*:lineNumber()$ >>> " + $expr$);
+    FLOAT                   →   android.util.Log.d("egan", "$className*:className()$:$methodName*:methodName()$:$line*:lineNumber()$ >>> " + $expr$);
+    LONG                    →   android.util.Log.d("egan", "$className*:className()$:$methodName*:methodName()$:$line*:lineNumber()$ >>> " + $expr$);
+    DOUBLE                  →   android.util.Log.d("egan", "$className*:className()$:$methodName*:methodName()$:$line*:lineNumber()$ >>> " + $expr$);
+    SHORT                   →   android.util.Log.d("egan", "$className*:className()$:$methodName*:methodName()$:$line*:lineNumber()$ >>> " + $expr$);
+    java.lang.Throwable     →   android.util.Log.d("egan", "$className*:className()$:$methodName*:methodName()$:$line*:lineNumber()$ >>> " + $expr$.getMessage());
